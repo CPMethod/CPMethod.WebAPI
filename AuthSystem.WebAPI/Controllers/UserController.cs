@@ -103,86 +103,86 @@ namespace AuthSystem.Controllers
             return Ok(dto);
         }
 
-        [HttpDelete("note")]
-        public async Task<IActionResult> DeleteNote(Guid id)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpDelete("note")]
+        //public async Task<IActionResult> DeleteNote(Guid id)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            string userId = _userManager.GetUserId(User)!;
+        //    string userId = _userManager.GetUserId(User)!;
 
-            _dbContext.RemoveRange(
-                _dbContext.Notes.Where(n => n.UserId == userId && n.Id == id));
+        //    _dbContext.RemoveRange(
+        //        _dbContext.Notes.Where(n => n.UserId == userId && n.Id == id));
 
-            await _dbContext.SaveChangesAsync();
+        //    await _dbContext.SaveChangesAsync();
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
-        [HttpGet("notes")]
-        public ActionResult<IEnumerable<Note>?> GetNotes()
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpGet("notes")]
+        //public ActionResult<IEnumerable<Note>?> GetNotes()
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            string id = _userManager.GetUserId(User)!;
-            IEnumerable<Note>? notes = _dbContext.Notes.Where(n => n.UserId == id);
+        //    string id = _userManager.GetUserId(User)!;
+        //    IEnumerable<Note>? notes = _dbContext.Notes.Where(n => n.UserId == id);
 
-            return Ok(notes);
-        }
+        //    return Ok(notes);
+        //}
 
-        [HttpPatch("note")]
-        public async Task<IActionResult> PatchNote(NoteDto noteDto)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpPatch("note")]
+        //public async Task<IActionResult> PatchNote(NoteDto noteDto)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            string userId = _userManager.GetUserId(User)!;
-            Note? note = await _dbContext.Notes.FindAsync(noteDto.Id);
+        //    string userId = _userManager.GetUserId(User)!;
+        //    Note? note = await _dbContext.Notes.FindAsync(noteDto.Id);
 
-            if (note is null)
-                return NotFound();
+        //    if (note is null)
+        //        return NotFound();
 
-            note.Title = noteDto.Title;
-            note.Content = noteDto.Content;
+        //    note.Title = noteDto.Title;
+        //    note.Content = noteDto.Content;
 
-            await _dbContext.SaveChangesAsync();
+        //    await _dbContext.SaveChangesAsync();
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
-        [HttpPost("note")]
-        public async Task<IActionResult> PostNote(AddNoteRequest request)
-        {
-            if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+        //[HttpPost("note")]
+        //public async Task<IActionResult> PostNote(AddNoteRequest request)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest(ModelState);
 
-            string? title = request.Title;
-            string? content = request.Content;
+        //    string? title = request.Title;
+        //    string? content = request.Content;
 
-            if (string.IsNullOrEmpty(title))
-                title = "Untitled";
+        //    if (string.IsNullOrEmpty(title))
+        //        title = "Untitled";
 
-            Note note = new Note
-            {
-                Title = title,
-                Content = content,
-                CreatedAt = DateTime.Now,
-            };
+        //    Note note = new Note
+        //    {
+        //        Title = title,
+        //        Content = content,
+        //        CreatedAt = DateTime.Now,
+        //    };
 
-            string id = _userManager.GetUserId(User)!;
-            User user = (await _dbContext.Users.Where(u => u.Id == id)
-                .Include(u => u.Notes)
-                .FirstOrDefaultAsync())!;
+        //    string id = _userManager.GetUserId(User)!;
+        //    User user = (await _dbContext.Users.Where(u => u.Id == id)
+        //        .Include(u => u.Notes)
+        //        .FirstOrDefaultAsync())!;
 
-            if (user.Notes is null)
-                user.Notes = new List<Note>();
+        //    if (user.Notes is null)
+        //        user.Notes = new List<Note>();
 
-            user.Notes.Add(note);
+        //    user.Notes.Add(note);
 
-            await _userManager.UpdateAsync(user);
+        //    await _userManager.UpdateAsync(user);
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
     }
 }

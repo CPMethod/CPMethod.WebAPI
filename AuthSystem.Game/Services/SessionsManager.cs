@@ -1,0 +1,78 @@
+﻿using AuthSystem.DataModel;
+using AuthSystem.DataModel.Game;
+using AuthSystem.Game.Abstractions;
+using System.Reactive.Linq;
+
+namespace AuthSystem.Game.Services
+{
+    public class SessionsManager : ISessionsManager
+    {
+        private readonly ISessionFactory _sessionFactory;
+        private readonly PlayersManagerFactory _playersManagerFactory;
+
+        private List<IGameSession> _sessions = new List<IGameSession>();
+        public IEnumerable<IGameSession> Sessions => _sessions.AsEnumerable();
+
+        public SessionsManager(
+            ISessionFactory sessionFactory,
+            PlayersManagerFactory playersManagerFactory)
+        {
+            _sessionFactory = sessionFactory;
+            _playersManagerFactory = playersManagerFactory;
+        }
+
+        public void EndSessions(User creator)
+            => EndSessions(creator.Id);
+
+        public void EndSessions(string creatorId)
+        {
+            _sessions.RemoveAll(s => s.Creator.Id == creatorId);
+        }
+
+        public IGameSession? CreateSession(string creatorId, Level level)
+        {
+            if (_sessions.Any(s => s.Creator.Id == creatorId || 
+                (s.Oponent is not null && s.Oponent.Id == creatorId)))
+                return null;
+
+            User? creator = _playersManagerFactory().GetPlayer(creatorId);
+
+            if (creator is null ||
+                !_playersManagerFactory().ActivePlayers.Contains(creator))
+                return null;
+
+            IGameSession session = _sessionFactory.Create(creator, level);
+
+            session.Completed
+                .Take(1)
+                .Subscribe(OnSessionCompleted);
+
+            _sessions.Add(session);
+
+            return session;
+        }
+
+        public IGameSession? CreateSession(User creator, Level level)
+            => CreateSession(creator.Id, level);
+
+        public IGameSession? FindSession(User participant)
+            => FindSession(participant.Id);
+
+        public IGameSession? FindSession(string participantId) 
+            => _sessions.FirstOrDefault(session 
+                => session.Battlefields.Any(battlefield 
+                    => battlefield is not null && 
+                       battlefield.Owner is not null && 
+                       battlefield.Owner.Id == participantId));
+        
+
+        #region private helpers
+
+        private void OnSessionCompleted(IGameSession session)
+        {
+            _sessions.Remove(session);
+        }
+
+        #endregion
+    }
+}

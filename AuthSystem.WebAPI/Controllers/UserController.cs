@@ -70,9 +70,6 @@ namespace AuthSystem.Controllers
             _dbContext.RefreshTokens.RemoveRange(
                 _dbContext.RefreshTokens.Where(rt => rt.UserId == user.Id));
 
-            if (user.Notes is not null)
-                _dbContext.Notes.RemoveRange(user.Notes);
-
             await _dbContext.SaveChangesAsync();  
 
             await _userManager.DeleteAsync(user);

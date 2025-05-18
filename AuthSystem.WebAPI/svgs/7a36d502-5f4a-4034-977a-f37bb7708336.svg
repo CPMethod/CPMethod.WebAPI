@@ -1,0 +1,182 @@
+<svg height="100%" style="background-color: white;" version="1.1" viewBox="0 0 1100 350" width="100%" xmlns="http://www.w3.org/2000/svg">
+<g stroke="red" transform="translate(25px, 125px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="25" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="75" y="191.66666666666669"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="75" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="25" y="158.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="100" y="175">
+Start
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="50" y="141.66666666666666">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="150" y="141.66666666666666">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="50" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="100" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="150" y="208.33333333333334">
+0
+</text>
+</g>
+<g stroke="red" transform="translate(925px, 125px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="925" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="975" y="191.66666666666669"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="975" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="925" y="158.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="1000" y="175">
+End
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="950" y="141.66666666666666">
+11
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="1050" y="141.66666666666666">
+11
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="950" y="208.33333333333334">
+11
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="1000" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="1050" y="208.33333333333334">
+11
+</text>
+</g>
+<g stroke="red" transform="translate(250px, 125px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="250" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="300" y="191.66666666666669"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="300" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="250" y="158.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="325" y="175">
+A
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="325" y="141.66666666666666">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="275" y="141.66666666666666">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="375" y="141.66666666666666">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="275" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="325" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="375" y="208.33333333333334">
+2
+</text>
+</g>
+<g stroke="black" transform="translate(475px, 50px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="475" y="50"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="525" y="116.66666666666667"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="525" y="50"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="475" y="83.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="100">
+B
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="66.66666666666667">
+3
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="500" y="66.66666666666667">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="600" y="66.66666666666667">
+5
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="500" y="133.33333333333334">
+4
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="133.33333333333334">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="600" y="133.33333333333334">
+7
+</text>
+</g>
+<g stroke="red" transform="translate(475px, 200px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="475" y="200"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="525" y="266.6666666666667"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="525" y="200"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="475" y="233.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="250">
+C
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="216.66666666666666">
+5
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="500" y="216.66666666666666">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="600" y="216.66666666666666">
+7
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="500" y="283.33333333333337">
+2
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="550" y="283.33333333333337">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="600" y="283.33333333333337">
+7
+</text>
+</g>
+<g stroke="red" transform="translate(700px, 125px)">
+<rect fill="white" height="100" rx="20" ry="20" stroke-width="2" width="150" x="700" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="750" y="191.66666666666669"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="50" x="750" y="125"/>
+<rect fill="none" height="33.333333333333336" stroke-width="2" width="150" x="700" y="158.33333333333334"/>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="775" y="175">
+D
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="775" y="141.66666666666666">
+4
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="725" y="141.66666666666666">
+7
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="825" y="141.66666666666666">
+11
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="725" y="208.33333333333334">
+7
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="775" y="208.33333333333334">
+0
+</text>
+<text alignment-baseline="middle" fill="black" font-size="20" stroke="none" text-anchor="middle" x="825" y="208.33333333333334">
+11
+</text>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 625 100  Q 662.5 100 662.5 137 Q 662.5 175 700 175"/>
+<path d="M 690 165 L 700 175 L 690 185"/>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 625 250  Q 662.5 250 662.5 213 Q 662.5 175 700 175"/>
+<path d="M 690 165 L 700 175 L 690 185"/>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 850 175  Q 887.5 175 887.5 175 Q 887.5 175 925 175"/>
+<path d="M 915 165 L 925 175 L 915 185"/>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 400 175  Q 437.5 175 437.5 138 Q 437.5 100 475 100"/>
+<path d="M 465 90 L 475 100 L 465 110"/>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 400 175  Q 437.5 175 437.5 212 Q 437.5 250 475 250"/>
+<path d="M 465 240 L 475 250 L 465 260"/>
+</g>
+<g stroke="black" style="fill:none; stroke-width:3;">
+<path d="M 175 175  Q 212.5 175 212.5 175 Q 212.5 175 250 175"/>
+<path d="M 240 165 L 250 175 L 240 185"/>
+</g>
+</svg>

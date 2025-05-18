@@ -13,7 +13,5 @@ namespace AuthSystem.DataModel
         /// Last name of user.
         /// </summary>
         public string? LastName { get; set; }
-
-        public List<Note>? Notes { get; set; } 
     }
 }

@@ -9,6 +9,8 @@ using AuthSystem.RefreshTokens;
 using AuthSystem.Jwt.DependencyInjection;
 using AuthSystem.Jwt;
 using AuthSystem.DataModel;
+using CPMethod.WebAPI.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AuthSystem
 {
@@ -20,32 +22,32 @@ namespace AuthSystem
 
             string? connectionString = builder.Configuration.GetConnectionString("AuthSystem.Database");
 
-            // Add services to the container.
+            //Add services to the container.
 
-            if (builder.Environment.IsProduction())
-            {
-                builder.Services.AddDbContext<AppDbContext>(options => 
-                options.UseSqlServer(connectionString));
-            }
+            //if (builder.Environment.IsProduction())
+            //{
+            //    builder.Services.AddDbContext<AppDbContext>(options =>
+            //    options.UseSqlServer(connectionString));
+            //}
 
-            if (builder.Environment.IsDevelopment())
-            {
+            //if (builder.Environment.IsDevelopment())
+            //{
                 var connection = new SqliteConnection(connectionString);
                 connection.Open();
                 builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(connection));
-            }
-            
+            //}
+
             builder.Services.AddIdentityCore<User>(options =>
             {
                 options.User.RequireUniqueEmail = true;
-                
+
                 // TODO: Set up SendGrid.
 
                 // TODO: Configure email confirmation.
-                
+
                 //options.SignIn.RequireConfirmedEmail = true;
-                
+
                 // TODO: Configure account confirmation.
 
                 //options.SignIn.RequireConfirmedAccount = true;
@@ -54,7 +56,7 @@ namespace AuthSystem
                 options.Password.RequireLowercase = true;
                 options.Password.RequireUppercase = true;
                 options.Password.RequireDigit = true;
-                options.Password.RequiredLength = 8;               
+                options.Password.RequiredLength = 8;
             }).AddEntityFrameworkStores<AppDbContext>()
               .AddDefaultTokenProviders();
 
@@ -71,7 +73,7 @@ namespace AuthSystem
                             });
 
             builder.Services.AddAuthentication()
-                            .AddJwtBearer(builder.Configuration.GetSection(nameof(JwtOptions)), 
+                            .AddJwtBearer(builder.Configuration.GetSection(nameof(JwtOptions)),
                                           builder.Configuration);
 
             builder.Services.AddRefreshTokens(builder.Configuration.GetSection(nameof(RefreshTokenOptions)))
@@ -80,17 +82,21 @@ namespace AuthSystem
             builder.Services.Configure<PasswordHasherOptions>(
                 options => options.IterationCount = 500000);
 
+            builder.Services.AddTransient<ISvgService, SvgService>();
+
             builder.Services.AddAuthorizationCore();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddMemoryCache();
+
             builder.Services.ConfigureSwaggerGen(setup =>
             {
                 setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "AuthSystem",
+                    Title = "CPMethod",
                     Version = "v1"
                 });
             });
@@ -114,7 +120,7 @@ namespace AuthSystem
             app.UseAuthentication();
             app.UseJwtBlacklist();
             app.UseAuthorization();
-
+            app.UseStaticFiles();
             app.MapControllers();
 
             app.Run();
